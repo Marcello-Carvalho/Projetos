@@ -26,17 +26,19 @@ int main(){
     // Calculo PIB per capita, densidade populacional e super poder
     pibcap = pibcid/pop;
     densi = pop/area;
-    suppod = pop + area + pibcid + pibcap - densi;
+    suppod = pop + area + pibcid + pibcap - densi + ntur;
 
     // Apresentacao dos dados da carta
     printf("\n\nCódigo da carta: %s\n", cod);
     printf("Nome da cidade: %s\n", nom);
     printf("População da cidade: %.2f\n", pop);
     printf("Área da cidade: %.2f km²\n", area);
-    printf("Densidade populacional: %f pessoas/km²\n", densi);
+    printf("Densidade populacional: %.2f pessoas/km²\n", densi);
     printf("PIB da cidade: %.2f\n", pibcid);
-    printf("PIB per capita: %f reais\n", pibcap);
+    printf("PIB per capita: %.2f reais\n", pibcap);
     printf("Número de pontos turísticos: %i\n", ntur);
+
+    printf("Super poder: %f ", suppod);
 
     printf("\nDeseja cadastrar outra carta? (s ou n) \n");
     scanf("%s", &resp);
