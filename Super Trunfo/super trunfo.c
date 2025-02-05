@@ -10,7 +10,9 @@ int main(){
     // Repetição para cadastro de cartas
     do{    
     // Entrada e armazenamento dos dados
-    printf("\nInforme o código da carta: ");
+    printf("\nInforme o UF do estado: ");
+    scanf("%s", &estado);
+    printf("Informe o código da carta: ");
     scanf("%s", &cod);
     printf("Informe o nome da cidade: ");
     scanf("%s", &nom);
@@ -29,6 +31,7 @@ int main(){
     suppod = pop + area + pibcid + pibcap - densi + ntur;
 
     // Apresentacao dos dados da carta
+    printf("\n\n*  Carta cadastrada com sucesso!  *\n\n");
     printf("\n\nCódigo da carta: %s\n", cod);
     printf("Nome da cidade: %s\n", nom);
     printf("População da cidade: %.2f\n", pop);
@@ -37,12 +40,12 @@ int main(){
     printf("PIB da cidade: %.2f\n", pibcid);
     printf("PIB per capita: %.2f reais\n", pibcap);
     printf("Número de pontos turísticos: %i\n", ntur);
+    printf("Super poder: %f \n", suppod);
 
-    printf("Super poder: %f ", suppod);
-
+    // Opção de cadastrar nova carta
     printf("\nDeseja cadastrar outra carta? (s ou n) \n");
     scanf("%s", &resp);
 
-    } while (resp == 's');
+    } while (resp == 's'); // Condicao para continuar no loop
     
 }
