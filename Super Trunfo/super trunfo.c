@@ -73,7 +73,7 @@ int main(){
     printf("Super poder: %f \n\n", suppod2);
 
     //Menu para escolha da propriedade a ser comparada
-
+    do {
     printf("*     Escolha a propriedade a ser utilizada na comparação     *\n\n");
     
     printf("1. População\n");
@@ -82,7 +82,9 @@ int main(){
     printf("4. PIB\n");
     printf("5. PIB per Capita\n");
     printf("6. Número de Pontos Turísticos\n");
-    printf("7. Super Poder\n\n");
+    printf("7. Super Poder\n");
+    printf("8. Sair\n\n");
+    printf("Qual opção deseja: \n\n");
     scanf("%d", &opcao);
 
     switch (opcao)
@@ -163,9 +165,17 @@ int main(){
             printf("Resultado: Carta 2 é a vencedora!");
         }
         break;
+
+    case 8:
+        printf("Saindo...\n");
+        break;
     
     default:
+        printf("Opção inválida\n");
         break;
     }
+      } while (opcao != 8);
+    
+      
     
 }
