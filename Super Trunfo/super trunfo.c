@@ -84,94 +84,94 @@ int main(){
     printf("6. Número de Pontos Turísticos\n");
     printf("7. Super Poder\n");
     printf("8. Sair\n\n");
-    printf("Qual opção deseja: \n\n");
+    printf("Qual opção deseja: ");
     scanf("%d", &opcao);
 
     switch (opcao)
     {
     case 1:
-        printf("Carta 1 - Cidade: %s, Código: %s, População: %.2f \n", &nom1, &cod1, (float)pop1);
+        printf("\n\nCarta 1 - Cidade: %s, Código: %s, População: %.2f \n", &nom1, &cod1, (float)pop1);
         printf("Carta 2 - Cidade: %s, Código: %s, População: %.2f \n", &nom2, &cod2, (float)pop2);
         if (pop1 > pop2)
         {
-            printf("Resultado: Carta 1 é a vencedora!");
+            printf("Resultado: Carta 1 é a vencedora!\n\n");
         }else{
-            printf("Resultado: Carta 2 é a vencedora!");
+            printf("Resultado: Carta 2 é a vencedora!\n\n");
         }
         break;
 
     case 2:
-        printf("Carta 1 - Cidade: %s, Código: %s, Área: %.2f \n", &nom1, &cod1, (float)area1);
+        printf("\n\nCarta 1 - Cidade: %s, Código: %s, Área: %.2f \n", &nom1, &cod1, (float)area1);
         printf("Carta 2 - Cidade: %s, Código: %s, Área: %.2f \n", &nom2, &cod2, (float)area2);
         if (area1 > area2)
         {
-            printf("Resultado: Carta 1 é a vencedora!");
+            printf("Resultado: Carta 1 é a vencedora!\n\n");
         }else{
-            printf("Resultado: Carta 2 é a vencedora!");
+            printf("Resultado: Carta 2 é a vencedora!\n\n");
         }
         break;
 
     case 3:
-        printf("Carta 1 - Cidade: %s, Código: %s, Densidade Populacional: %.2f \n", &nom1, &cod1, (float)densi1);
+        printf("\n\nCarta 1 - Cidade: %s, Código: %s, Densidade Populacional: %.2f \n", &nom1, &cod1, (float)densi1);
         printf("Carta 2 - Cidade: %s, Código: %s, Densidade Populacional: %.2f \n", &nom2, &cod2, (float)densi2);
         if (densi1 < densi2)
         {
-            printf("Resultado: Carta 1 é a vencedora!");
+            printf("Resultado: Carta 1 é a vencedora!\n\n");
         }else{
-            printf("Resultado: Carta 2 é a vencedora!");
+            printf("Resultado: Carta 2 é a vencedora!\n\n");
         }
         break;
 
     case 4:
-        printf("Carta 1 - Cidade: %s, Código: %s,  PIB: %.2f \n", &nom1, &cod1, (float)pibcid1);
+        printf("\n\nCarta 1 - Cidade: %s, Código: %s,  PIB: %.2f \n", &nom1, &cod1, (float)pibcid1);
         printf("Carta 2 - Cidade: %s, Código: %s,  PIB: %.2f \n", &nom2, &cod2, (float)pibcid2);
         if (pibcid1 > pibcid2)
         {
-            printf("Resultado: Carta 1 é a vencedora!");
+            printf("Resultado: Carta 1 é a vencedora!\n\n");
         }else{
-            printf("Resultado: Carta 2 é a vencedora!");
+            printf("Resultado: Carta 2 é a vencedora!\n\n");
         }
         break;
 
     case 5:
-        printf("Carta 1 - Cidade: %s, Código: %s,  PIB per Capita: %.2f \n", &nom1, &cod1, (float)pibcap1);
+        printf("\n\nCarta 1 - Cidade: %s, Código: %s,  PIB per Capita: %.2f \n", &nom1, &cod1, (float)pibcap1);
         printf("Carta 2 - Cidade: %s, Código: %s,  PIB per Capita: %.2f \n", &nom2, &cod2, (float)pibcap2);
         if (pibcap1 > pibcap2)
         {
-            printf("Resultado: Carta 1 é a vencedora!");
+            printf("Resultado: Carta 1 é a vencedora!\n\n");
         }else{
-            printf("Resultado: Carta 2 é a vencedora!");
+            printf("Resultado: Carta 2 é a vencedora!\n\n");
         }
         break;
 
     case 6:
-        printf("\nCarta 1 - Cidade: %s, Código: %s,  Número de Pontos Turísticos: %.2f \n", &nom1, &cod1, (float)ntur1);
+        printf("\n\nCarta 1 - Cidade: %s, Código: %s,  Número de Pontos Turísticos: %.2f \n", &nom1, &cod1, (float)ntur1);
         printf("Carta 2 - Cidade: %s, Código: %s,  Número de Pontos Turísticos: %.2f \n", &nom2, &cod2, (float)ntur2);
         if (ntur1 > ntur2)
         {
-            printf("Resultado: Carta 1 é a vencedora!");
+            printf("Resultado: Carta 1 é a vencedora!\n\n");
         }else{
-            printf("Resultado: Carta 2 é a vencedora!");
+            printf("Resultado: Carta 2 é a vencedora!\n\n");
         }
         break;
 
     case 7:
-        printf("Carta 1 - Cidade: %s, Código: %s,  Super Poder: %.2f \n", &nom1, &cod1, (float)suppod1);
+        printf("\n\nCarta 1 - Cidade: %s, Código: %s,  Super Poder: %.2f \n", &nom1, &cod1, (float)suppod1);
         printf("Carta 2 - Cidade: %s, Código: %s,  Super Poder: %.2f \n", &nom2, &cod2, (float)suppod2);
         if (suppod1 > suppod2)
         {
-            printf("Resultado: Carta 1 é a vencedora!");
+            printf("Resultado: Carta 1 é a vencedora!\n\n");
         }else{
-            printf("Resultado: Carta 2 é a vencedora!");
+            printf("Resultado: Carta 2 é a vencedora!\n\n");
         }
         break;
 
     case 8:
-        printf("Saindo...\n");
+        printf("\nSaindo...\n");
         break;
     
     default:
-        printf("Opção inválida\n");
+        printf("\nOpção inválida\n");
         break;
     }
       } while (opcao != 8);
