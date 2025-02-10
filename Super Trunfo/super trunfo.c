@@ -175,7 +175,5 @@ int main(){
         break;
     }
       } while (opcao != 8);
-    
-      
-    
+     
 }

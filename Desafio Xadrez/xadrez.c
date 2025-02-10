@@ -12,8 +12,9 @@ int main(){
         printf("1. Bispo\n");
         printf("2. Torre\n");
         printf("3. Rainha\n");
-        printf("4. Sair\n");
+        printf("4. Sair\n\n");
         scanf("%d", &resp);
+        printf("\n");
 
             switch (resp)
             {
@@ -25,8 +26,34 @@ int main(){
                         printf("Cima e Direita\n");
                     }
                 break;
+
+            case 2: //movimentação da torre
+                printf("\nMovimentando...\n\n");
+
+                    for (i = 0; i < TORRE; i++)
+                    {
+                        printf("Direita\n");
+                    }
+                break;
+
+            case 3: //movimentação da rainha
+                printf("\nMovimentando...\n\n");
+
+                    for (i = 0; i < RAINHA; i++)
+                    {
+                        printf("Esquerda\n");
+                    }
+                break;
+
+            case 4: //opção de saída
+
+                        printf("Saindo...\n");
+                    
+                break;
             
             default:
+
+                printf("Opção inválida!\n");
                 break;
             }
                   
