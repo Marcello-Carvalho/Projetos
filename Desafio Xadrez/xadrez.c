@@ -6,7 +6,7 @@ int main(){
 
     int i = 0, resp = 0;
 
-    do
+    do //menu interativo para definir a peça a ser movimentada
     {
         printf("\nQual peça deseja movimentar?\n\n");
         printf("1. Bispo\n");
@@ -17,7 +17,7 @@ int main(){
 
             switch (resp)
             {
-            case 1:
+            case 1: //movimentação do bispo
                 printf("\nMovimentando...\n\n");
 
                     for (i = 0; i < BISPO; i++)
