@@ -14,12 +14,12 @@ int main(){
         printf("3. Rainha\n");
         printf("4. Sair\n\n");
         scanf("%d", &resp);
-        printf("\n");
+        printf("");
 
             switch (resp)
             {
             case 1: //movimentação do bispo
-                printf("\nMovimentando...\n\n");
+                printf("\nMovimentando Bispo...\n\n");
 
                     for (i = 0; i < BISPO; i++)
                     {
@@ -28,7 +28,7 @@ int main(){
                 break;
 
             case 2: //movimentação da torre
-                printf("\nMovimentando...\n\n");
+                printf("\nMovimentando Torre...\n\n");
 
                     for (i = 0; i < TORRE; i++)
                     {
@@ -37,7 +37,7 @@ int main(){
                 break;
 
             case 3: //movimentação da rainha
-                printf("\nMovimentando...\n\n");
+                printf("\nMovimentando Rainha...\n\n");
 
                     for (i = 0; i < RAINHA; i++)
                     {
