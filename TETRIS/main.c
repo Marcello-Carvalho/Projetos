@@ -1,0 +1,161 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Definição do tamanho da fila (conforme requisito de número fixo)
+#define TAM_MAX 5
+
+// Estrutura que representa uma Peça
+typedef struct {
+    char nome; // Tipo da peça: 'I', 'O', 'T', 'L', etc.
+    int id;    // Identificador único
+} Peca;
+
+// Estrutura que representa a Fila Circular
+typedef struct {
+    Peca itens[TAM_MAX];
+    int inicio;
+    int fim;
+    int quantidade;
+} Fila;
+
+// Variável global para controlar o ID das peças (simulando geração contínua)
+int contador_id_global = 0;
+
+// --- Funções Auxiliares ---
+
+// Função para inicializar a fila vazia
+void inicializarFila(Fila *f) {
+    f->inicio = 0;
+    f->fim = 0;
+    f->quantidade = 0;
+}
+
+// Verifica se a fila está cheia
+int filaCheia(Fila *f) {
+    return (f->quantidade == TAM_MAX);
+}
+
+// Verifica se a fila está vazia
+int filaVazia(Fila *f) {
+    return (f->quantidade == 0);
+}
+
+// Função que gera uma peça automaticamente (simulação)
+Peca gerarPeca() {
+    Peca p;
+    char tipos[] = {'I', 'O', 'T', 'L', 'J', 'S', 'Z'};
+    
+    // Escolhe um tipo aleatório
+    p.nome = tipos[rand() % 7];
+    p.id = contador_id_global++; // Atribui ID e incrementa o contador
+    
+    return p;
+}
+
+// --- Funções Principais (Requisitos) ---
+
+// Ação 2: Inserir nova peça (Enqueue)
+void inserirNovaPeca(Fila *f) {
+    if (filaCheia(f)) {
+        printf("\n[AVISO] A fila esta cheia! Nao e possivel adicionar novas pecas agora.\n");
+    } else {
+        Peca nova = gerarPeca();
+        
+        // Insere na posição 'fim'
+        f->itens[f->fim] = nova;
+        
+        // Lógica circular: se chegar ao final do vetor, volta para o 0
+        f->fim = (f->fim + 1) % TAM_MAX;
+        f->quantidade++;
+        
+        printf("\n[SUCESSO] Peca gerada e inserida: [%c %d]\n", nova.nome, nova.id);
+    }
+}
+
+// Ação 1: Jogar peça (Dequeue - remove do início)
+void jogarPeca(Fila *f) {
+    if (filaVazia(f)) {
+        printf("\n[ERRO] Nao ha pecas na fila para jogar!\n");
+    } else {
+        Peca p = f->itens[f->inicio];
+        
+        // Move o início para a próxima posição (circular)
+        f->inicio = (f->inicio + 1) % TAM_MAX;
+        f->quantidade--;
+        
+        printf("\n>>> Peca JOGADA: [%c %d] (Removida da fila)\n", p.nome, p.id);
+    }
+}
+
+// Ação: Exibir estado atual da fila
+void exibirFila(Fila *f) {
+    printf("\n---------------------------------------------------\n");
+    printf("Fila de pecas:\n");
+    
+    if (filaVazia(f)) {
+        printf("[ VAZIA ]");
+    } else {
+        int i = f->inicio;
+        int count = 0;
+        
+        // Percorre a fila baseada na quantidade, lidando com o índice circular
+        while (count < f->quantidade) {
+            printf("[%c %d] ", f->itens[i].nome, f->itens[i].id);
+            if (count < f->quantidade - 1) printf("| "); // Separador visual
+            
+            i = (i + 1) % TAM_MAX;
+            count++;
+        }
+    }
+    printf("\n---------------------------------------------------\n");
+}
+
+// --- Função Principal ---
+
+int main() {
+    // Inicializa o gerador de números aleatórios
+    srand(time(NULL));
+    
+    Fila filaDePecas;
+    inicializarFila(&filaDePecas);
+    
+    int opcao = -1;
+
+    printf("=== TETRIS STACK: Simulador de Fila ===\n");
+
+    // Inicialização Automática: O enunciado pede para inicializar com elementos.
+    // Vamos encher a fila antes de começar o menu.
+    printf("Inicializando sistema... Gerando pecas iniciais...\n");
+    while (!filaCheia(&filaDePecas)) {
+        inserirNovaPeca(&filaDePecas);
+    }
+
+    // Loop do Menu
+    while (opcao != 0) {
+        exibirFila(&filaDePecas);
+        
+        printf("\nOpcoes de acao:\n");
+        printf("1 - Jogar peca (dequeue)\n");
+        printf("2 - Inserir nova peca (enqueue)\n");
+        printf("0 - Sair\n");
+        printf("Escolha: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                jogarPeca(&filaDePecas);
+                break;
+            case 2:
+                inserirNovaPeca(&filaDePecas);
+                break;
+            case 0:
+                printf("Saindo do sistema...\n");
+                break;
+            default:
+                printf("Opcao invalida!\n");
+        }
+    }
+
+    return 0;
+}
